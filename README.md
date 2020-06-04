@@ -14,7 +14,6 @@ BASE_URL=https://api.eia.gov
 PORT=3000
 TIMEOUT=5000
 APP_URL=localhost:3000
-
 2. npm start
 ```
 
