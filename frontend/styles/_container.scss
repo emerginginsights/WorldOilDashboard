@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  padding: whitespace(more) whitespace() whitespace(more) whitespace();
+  @include for-size(desktop) {
+    padding: whitespace(more) whitespace(more) whitespace();
+    width: 1440px;
+    height: 100%;
+  }
+  .highcharts-point {
+    fill: #232554;
+    stroke: rgba(255, 255, 255, 0.5);
+    stroke-opacity: 0.4;
+  }
+  .highcharts-point:hover {
+    stroke: #18a0fb;
+    stroke-opacity: 1;
+    stroke-width: 2px;
+  }
+}

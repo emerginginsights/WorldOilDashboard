@@ -1,0 +1,38 @@
+@font-face {
+  font-family: 'Avenir Next';
+  src: url('../fonts/avenir/AvenirNext-Regular.woff') format('woff');
+  font-style: normal;
+  font-weight: normal;
+}
+
+* {
+  box-sizing: border-box;
+  min-height: 0;
+  min-width: 0;
+}
+
+html {
+  font-size: 1em;
+  letter-spacing: 0.02em;
+  font-family: 'Avenir Next';
+  font-style: normal;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  background: #1C1E43;
+}
+html, body { height: 100%; width: 100%; margin: 0; }
+
+/** Import application related styles */
+@import "variables";
+@import "util";
+@import "card";
+@import "container";
+@import "header";
+@import "content";
+@import "footer";

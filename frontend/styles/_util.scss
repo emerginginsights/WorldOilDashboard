@@ -1,0 +1,49 @@
+@import "variables";
+
+$whitespace: (
+  less: 0.313rem,
+  base: 0.625rem, // 5px
+  more: 1.25rem, // 20px
+  most: 1.875rem, // 30px
+  large: 3.125rem, // 50px
+);
+
+@function whitespace($space:base) {
+  @return map-get($whitespace, $space)
+}
+
+@mixin for-size($size) {
+  @if $size == mobile {
+    @media (max-width: 599px) { @content; }
+  } @else if $size == desktop {
+    @media (min-width: 1200px) { @content; }
+  }
+}
+
+@mixin header-text() {
+  color: $primary-text-color;
+  font-size: $header-font-size;
+}
+
+@mixin card-title($padding:0) {
+  color: $primary-text-color;
+  font-size: $card-title-font-size;
+  line-height: $card-title-line-height;
+  padding: $padding;
+  text-align: center;
+}
+
+@mixin card-value($font-size:$card-value-default-font-size) {
+  color: $card-value-font-color;
+  line-height: $card-value-line-height;
+  font-size: $font-size;
+  font-weight: bold;
+  text-align: center;
+}
+
+@mixin value-unit() {
+  text-align: center;
+  color: $primary-text-color;
+  line-height:17px;
+  font-size:$card-value-unit-font-size
+}

@@ -1,0 +1,137 @@
+{{#if state.isDataLoading}}
+  <div class="loading-container">
+    <div class="loader center"></div>
+  </div>
+{{else}}
+  <div class="content">
+    <div class="content-group-left">
+      <div class="production card">
+        <div class="title">
+          World Oil Production
+        </div>
+        <div class="value large">
+          {{state.production}}
+        </div>
+        <div class="unit">
+          million barrel per day
+        </div>
+      </div>
+      <div class="producers card show-for-large">
+        <div class="title">
+          Top Oil Producers
+        </div>
+        <div class="sub-title">
+          thousand barrels per day
+        </div>
+        <dl class="list production-country">
+          {{#each state.oilProductionCountries as |item|}}
+            <dt data-id="{{item.code}}" class="list-title">{{item.country}}</dt>
+            <dd data-id="{{item.code}}" class="list-value">{{item.value}}</dd>
+          {{/each}}
+        </dl>
+      </div>
+    </div>
+    <div class="content-group-center show-for-large">
+      <div id="world-map-desktop" class="country-map">
+      </div>
+    </div>
+    <div class="content-group-right">
+      <div class="group">
+        <div class="consumption card">
+          <div class="title">
+            World Oil Consumption
+          </div>
+          <div class="value large">
+            {{state.consumption}}
+          </div>
+          <div class="unit">
+            million barrel per day
+          </div>
+        </div>
+        <div class="consumers card show-for-large">
+          <div class="title">
+            Top 3 Oil Consumers
+          </div>
+          <div class="sub-title">
+            thousand barrels per day
+          </div>
+          <dl class="list">
+            {{#each state.topOilConsumption as |item|}}
+              <dt class="list-title">{{item.country}}</dt>
+              <dd class="list-value">{{item.value}}</dd>
+            {{/each}}
+          </dl>
+        </div>
+        <div class="break-column"></div>
+        <div class="brent-wti card">
+          <div class="brent">
+            <div class="title">
+              Brent
+            </div>
+            <div class="value">
+              ${{state.brentPrice}}
+            </div>
+          </div>
+          <div class="line"></div>
+          <div class="wti">
+            <div class="title">
+              WTI
+            </div>
+            <div class="value">
+              ${{state.wtiPrice}}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hide-for-large">
+        <div id="world-map-mobile" class="country-map">
+        </div>
+        <div class="producers card">
+          <div class="title">
+            Top Oil Producers
+          </div>
+          <div class="sub-title">
+            thousand barrels per day
+          </div>
+          <dl class="list production-country">
+            {{#each state.oilProductionCountries as |item|}}
+              <dt data-id="{{item.code}}" class="list-title">{{item.country}}</dt>
+              <dd data-id="{{item.code}}" class="list-value">{{item.value}}</dd>
+            {{/each}}
+          </dl>
+        </div>
+        <div class="consumers card">
+          <div class="title">
+            Top 3 Oil Consumers
+          </div>
+          <div class="sub-title">
+            thousand barrels per day
+          </div>
+          <dl class="list">
+            {{#each state.topOilConsumption as |item|}}
+              <dt class="list-title">{{item.country}}</dt>
+              <dd class="list-value">{{item.value}}</dd>
+            {{/each}}
+          </dl>
+        </div>
+      </div>
+      <div class="chart-container card">
+        <div class="charts">
+          <div id="production" class="chart-content">
+          </div>
+          <div id="consumption" class="chart-content hide">
+          </div>
+        </div>
+        <div class="chart-footer">
+          <div data-id="production" class="tab active">
+            Oil Production
+          </div>
+          <div data-id="consumption" class="tab inactive">
+            Oil Consumption
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{{/if}}
+
